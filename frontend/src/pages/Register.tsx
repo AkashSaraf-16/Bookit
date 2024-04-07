@@ -9,7 +9,7 @@ export type RegisterFormData = {
     lastName: string,
     email: string,
     password: string,
-    confrimPassword: string
+    confirmPassword: string
 }
 
 const Register = () => {
@@ -100,7 +100,7 @@ const Register = () => {
                 <input
                     type="password"
                     className="border rounded w-full py-1 px-2 font-normal"
-                    {...register("confrimPassword", {
+                    {...register("confirmPassword", {
                         validate: (val: string) => {
                             if (!val) {
                                 return "This field is required"
@@ -112,9 +112,9 @@ const Register = () => {
                     }
                     )}>
                 </input>
-                {errors.confrimPassword && (
+                {errors.confirmPassword && (
                     <span className="text-red-500">
-                        {errors.confrimPassword.message}
+                        {errors.confirmPassword.message}
                     </span>
                 )}
             </label>
