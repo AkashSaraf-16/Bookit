@@ -39,6 +39,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
 
+//TODO: Why are we doing this watch again 7:11:00
+app.use("*", (req: Request, res:Response)=>{
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+});
+
 const port = process.env.PORT || 7000;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
